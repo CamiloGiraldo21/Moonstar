@@ -281,7 +281,7 @@
   }
 
   /* ===========================================================
-     SOBRE LA EMPRESA
+     SOBRE LA EMPRESA (MISIÓN Y VISIÓN)
      =========================================================== */
   .sobre{ background: var(--blanco); }
 
@@ -297,51 +297,104 @@
 
   .tarjetas-sobre{
     display:grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1fr 1fr;
     gap: 32px;
     align-items: stretch;
   }
 
-  .tarjeta-texto{
+  .tarjeta-mision-vision{
     background: var(--rosa-suave);
     border-radius: var(--radio);
     padding: 46px;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-  }
-  .tarjeta-texto p{ color: var(--gris-oscuro); font-size: 1.05rem; }
-
-  .grid-mini{
-    display:grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 32px;
-  }
-
-  .tarjeta-mini{
-    background: var(--blanco);
-    border: 1px solid var(--rosa-linea);
-    border-radius: var(--radio);
-    padding: 30px;
+    justify-content: flex-start;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid transparent;
   }
-  .tarjeta-mini:hover{
-    transform: translateY(-6px);
+
+  .tarjeta-mision-vision:hover {
+    transform: translateY(-5px);
     box-shadow: var(--sombra);
+    border-color: var(--rosa-linea);
   }
-  .tarjeta-mini h3{
-    color: var(--vino);
-    font-size: 1.15rem;
-    margin-bottom: 10px;
+
+  .tarjeta-mision-vision h3{
+    color: var(--vino-oscuro);
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    font-style: italic;
+    position: relative;
+    padding-bottom: 8px;
   }
-  .tarjeta-mini p{ color: var(--gris-medio); font-size: 0.95rem; }
+
+  .tarjeta-mision-vision h3::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--dorado);
+  }
+
+  .tarjeta-mision-vision p{ color: var(--gris-oscuro); font-size: 1.05rem; line-height: 1.7; }
 
   @media (max-width: 860px){
     .tarjetas-sobre{ grid-template-columns: 1fr; }
-    .grid-mini{ grid-template-columns: 1fr 1fr; grid-template-rows: none; }
   }
-  @media (max-width: 560px){
-    .grid-mini{ grid-template-columns: 1fr; }
+
+  /* ===========================================================
+     VALOR DIFERENCIAL
+     =========================================================== */
+  .valores{ 
+    background: var(--blanco); 
+    border-top: 1px solid var(--rosa-linea);
+  }
+  
+  .valores-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 50px;
+  }
+
+  .tarjeta-valor{
+    background: var(--blanco);
+    border: 1px solid var(--rosa-linea);
+    border-radius: var(--radio);
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .tarjeta-valor:hover{
+    transform: translateY(-8px);
+    box-shadow: var(--sombra);
+    border-color: var(--vino-suave);
+  }
+
+  .tarjeta-valor .icono-decorativo{
+    font-size: 2.2rem;
+    color: var(--dorado);
+    margin-bottom: 15px;
+    display: block;
+  }
+
+  .tarjeta-valor h3{
+    color: var(--vino);
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+  }
+
+  .tarjeta-valor p{
+    color: var(--gris-medio);
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 860px){
+    .valores-grid{ grid-template-columns: 1fr; }
   }
 
   /* ===========================================================
@@ -519,6 +572,7 @@
       <ul class="menu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#sobre">Sobre nosotros</a></li>
+        <li><a href="#valores">Nuestro valor</a></li>
         <li><a href="#experiencia">Experiencia</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="#contacto" class="boton">Reservar asesoría</a></li>
@@ -568,34 +622,65 @@
   </section>
 
   <!-- =========================================================
-       SOBRE LA EMPRESA
+       SOBRE LA EMPRESA (MISIÓN Y VISIÓN)
   ========================================================== -->
   <section class="sobre" id="sobre">
     <div class="contenedor">
       <div class="sobre-cabecera">
-        <span class="eyebrow">Sobre nosotros</span>
-        <h2>Un santuario para los sentidos, en el corazón de Cali</h2>
+        <span class="eyebrow">Nuestra Esencia</span>
+        <h2>Propósito e Inspiración detrás de Moonstar</h2>
       </div>
 
       <div class="tarjetas-sobre">
-        <div class="tarjeta-texto">
+        <div class="tarjeta-mision-vision">
+          <h3>Nuestra Misión</h3>
           <p>
-            En Moonstar creemos que cada fragancia cuenta una historia. Por eso nuestro espacio
-            está pensado para que explores, huelas y descubras perfumes, colonias y extractos
-            de esencias con calma, acompañado siempre de una asesoría cercana y honesta.
-            No vendemos frascos: guiamos encuentros entre las personas y su propio aroma.
+            Brindar a nuestros clientes en Cali fragancias de alta calidad y excelente duración, 
+            ofreciendo una atención personalizada, asesoría profesional y precios accesibles 
+            que permitan a cada persona encontrar el perfume ideal para expresar su identidad y estilo.
           </p>
         </div>
 
-        <div class="grid-mini">
-          <div class="tarjeta-mini">
-            <h3>Fragancias</h3>
-            <p>Perfumes, colonias y extractos de esencias seleccionados para cada personalidad.</p>
-          </div>
-          <div class="tarjeta-mini">
-            <h3>Cuidado personal</h3>
-            <p>Cosmética fina y productos complementarios para una experiencia sensorial completa.</p>
-          </div>
+        <div class="tarjeta-mision-vision">
+          <h3>Nuestra Visión</h3>
+          <p>
+            Ser una microempresa caleña reconocida por la calidad de sus productos, la confianza 
+            de sus clientes y la innovación en el mercado de la perfumería, consolidándonos como 
+            una de las perfumerías de mayor preferencia en Cali y expandiendo nuestra presencia 
+            en el Valle del Cauca.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       VALOR DIFERENCIAL
+  ========================================================== -->
+  <section class="valores" id="valores">
+    <div class="contenedor">
+      <div class="sobre-cabecera">
+        <span class="eyebrow">¿Por qué elegirnos?</span>
+        <h2>Nuestro Valor Diferencial</h2>
+      </div>
+
+      <div class="valores-grid">
+        <div class="tarjeta-valor">
+          <span class="icono-decorativo">✦</span>
+          <h3>Asesoría y Conexión Real</h3>
+          <p>No vendemos perfumes a ciegas; te brindamos una guía experta, cercana y sin afanes para que descubras el aroma que conecta contigo y proyecte tu verdadera identidad.</p>
+        </div>
+
+        <div class="tarjeta-valor">
+          <span class="icono-decorativo">✦</span>
+          <h3>Calidad y Duración Excepcional</h3>
+          <p>Seleccionamos cuidadosamente cada fragancia asegurando una fijación y perdurabilidad de primer nivel, haciendo que tu inversión rinda al máximo en cada gota.</p>
+        </div>
+
+        <div class="tarjeta-valor">
+          <span class="icono-decorativo">✦</span>
+          <h3>Lujo al Alcance de Cali</h3>
+          <p>Democratizamos el acceso a la perfumería de calidad. Ofrecemos precios sumamente competitivos y accesibles para que el buen gusto no sea un privilegio de pocos.</p>
         </div>
       </div>
     </div>
